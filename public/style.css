@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000 !important;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 75%;
+    padding: 40px;
+    margin: auto;
+    border-radius: 45px;
+}
+
+.join-room, .message-input {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.chat-area, .info-area {
+    flex-grow: 1;
+    margin-bottom: 10px;
+}
+
+.chat-area {
+    background-color: gray;
+    padding: 12px;
+    border-radius: 18px;
+    height:500px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column; /* Ensure messages stack vertically */
+}
+
+.message {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 15px;
+    max-width: 60%;
+    position: relative;
+}
+
+.current-user {
+    background-color: #d1f0d1; /* Light green for current user */
+    align-self: flex-start; /* Align to the left */
+    border-bottom-left-radius: 0;
+}
+
+.other-user {
+    background-color: #f1f0f0; /* Light gray for other users */
+    align-self: flex-end; /* Align to the right */
+    border-bottom-right-radius: 0;
+}
+
+.timestamp {
+    font-size: 0.8em;
+    color: gray;
+    position: absolute;
+    bottom: -18px;
+    right: 10px;
+}
+
+.username {
+    font-weight: bold;
+}
+
+#typingStatus {
+    font-style: italic;
+    color: gray;
+}
+
+.info-area {
+    color: white;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 15px;
+    margin-right: 10px;
+    border-radius: 50px;
+}
+
+button {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 60px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Clear floats after messages */
+#messages:after {
+    content: "";
+    display: table;
+    clear: both;
+}
