@@ -33,7 +33,7 @@ body {
     height:500px;
     overflow-y: auto;
     display: flex;
-    flex-direction: column; /* Ensure messages stack vertically */
+    flex-direction: column;
 }
 
 .message {
@@ -45,14 +45,14 @@ body {
 }
 
 .current-user {
-    background-color: #d1f0d1; /* Light green for current user */
-    align-self: flex-start; /* Align to the left */
+    background-color: #d1f0d1; 
+    align-self: flex-start; 
     border-bottom-left-radius: 0;
 }
 
 .other-user {
-    background-color: #f1f0f0; /* Light gray for other users */
-    align-self: flex-end; /* Align to the right */
+    background-color: #f1f0f0; 
+    align-self: flex-end; 
     border-bottom-right-radius: 0;
 }
 
@@ -97,7 +97,6 @@ button:hover {
     background-color: #218838;
 }
 
-/* Clear floats after messages */
 #messages:after {
     content: "";
     display: table;

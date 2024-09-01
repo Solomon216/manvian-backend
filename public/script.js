@@ -14,14 +14,14 @@ document.getElementById('sendMessageButton').addEventListener('click', () => {
     const username = document.getElementById('username').value;
     if (message) {
         const timestamp = new Date().toLocaleTimeString();
-        addMessage(username, message, true, timestamp);  // Add current user's message
+        addMessage(username, message, true, timestamp); 
         socket.emit('chatMessage', { username, message, timestamp });
         document.getElementById('messageInput').value = '';
     }
 });
 
 socket.on('message', (data) => {
-    addMessage(data.username, data.message, false, data.timestamp);  // Add other user's message
+    addMessage(data.username, data.message, false, data.timestamp);  
 });
 
 socket.on('typing', (data) => {
@@ -45,7 +45,6 @@ function addMessage(username, content, isCurrentUser, timestamp) {
     messageDiv.className = isCurrentUser ? 'message current-user' : 'message other-user';
     messageDiv.innerHTML = `<p class="username">${username}:</p><p>${content}</p><span class="timestamp">${timestamp}</span>`;
     
-    // Remove previous message if it's a duplicate
     const messages = document.getElementById('messages').children;
     for (const msg of messages) {
         if (msg.innerHTML === messageDiv.innerHTML) {
